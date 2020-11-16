@@ -9,7 +9,22 @@ public class App
 {
     public static void main( String[] args ) {
 
-        Figura figura;
+        Figura figura = new Figura() {
+            @Override
+            public String Name() {
+                return null;
+            }
+
+            @Override
+            public Integer Perim() {
+                return null;
+            }
+
+            @Override
+            public Double Plosh() {
+                return null;
+            }
+        };
         Scanner in = new Scanner(System.in);
         System.out.print("Выберите фигуру: \n 1 - треугольник \n 2 - квадрат \n 3 - прямоугольник \n");
         int fig = in.nextInt();
@@ -32,9 +47,9 @@ public class App
                 System.out.print("Укажите длинну стороны A в мм :");
                 kvadrat.setA(in.nextInt());
                 figura = kvadrat;
-                System.out.println( "Выбрана фигура: " + kvadrat.Name());
-                System.out.println( "Площадь: " + kvadrat.Plosh());
-                System.out.println( "Периметр :" + kvadrat.Perim());
+               // System.out.println( "Выбрана фигура: " + kvadrat.Name());
+               // System.out.println( "Площадь: " + kvadrat.Plosh());
+               // System.out.println( "Периметр :" + kvadrat.Perim());
             }
         else if (fig == 3)
             {
@@ -51,7 +66,9 @@ public class App
             System.exit(1);
         }
 
-      //  System.out.println( "Выбрана фигура:" + figura.Name() );
+        System.out.println( "Выбрана фигура: " + figura.Name() );
+        System.out.println( "Её площадь: " + figura.Plosh() );
+        System.out.println( "Её периметр: " + figura.Perim() );
      //   System.out.println( "Выбрана фигура:" + );
 /*
         while (i_st < 3)
