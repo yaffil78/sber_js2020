@@ -8,21 +8,52 @@ import java.util.Scanner;
 public class App
 {
     public static void main( String[] args ) {
-        int[] fig_dan;
-        fig_dan = new int[5];
-        int i_st = 0;
-        double plosh = 0;
-        int perim = 0;
-        double polu_perim = 0;
+
+        Figura figura;
         Scanner in = new Scanner(System.in);
         System.out.print("Выберите фигуру: \n 1 - треугольник \n 2 - квадрат \n 3 - прямоугольник \n");
-        int figura = in.nextInt();
+        int fig = in.nextInt();
 
-        if (figura > 3 || figura < 1) {
+        if (fig == 1)
+            {
+                Treug treug = new Treug();
+                System.out.print("Укажите длинну стороны A в мм :");
+                treug.setA(in.nextInt());
+                System.out.print("Укажите длинну стороны B в мм :");
+                treug.setB(in.nextInt());
+                System.out.print("Укажите длинну стороны C в мм :");
+                treug.setC(in.nextInt());
+                treug.Sush(treug.getA(), treug.getB(),treug.getC());
+                figura = treug;
+            }
+        else if (fig == 2)
+            {
+                Kvadrat kvadrat = new Kvadrat();
+                System.out.print("Укажите длинну стороны A в мм :");
+                kvadrat.setA(in.nextInt());
+                figura = kvadrat;
+                System.out.println( "Выбрана фигура: " + kvadrat.Name());
+                System.out.println( "Площадь: " + kvadrat.Plosh());
+                System.out.println( "Периметр :" + kvadrat.Perim());
+            }
+        else if (fig == 3)
+            {
+                Priamoug priamoug = new Priamoug();
+                System.out.print("Укажите длинну стороны A в мм :");
+                priamoug.setA(in.nextInt());
+                System.out.print("Укажите длинну стороны B в мм :");
+                priamoug.setB(in.nextInt());
+                figura = priamoug;
+            }
+        else {
+
             System.out.println("Неопознанная фигура, выберите число из указанных!");
             System.exit(1);
         }
 
+      //  System.out.println( "Выбрана фигура:" + figura.Name() );
+     //   System.out.println( "Выбрана фигура:" + );
+/*
         while (i_st < 3)
         {
             System.out.print("Укажите длинну стороны " + (i_st + 1) + " в мм :");
@@ -78,6 +109,6 @@ public class App
         }
         System.out.println( "Площадь:" + plosh );
         System.out.println( "Периметр:" + perim );
-
+*/
     }
 }
