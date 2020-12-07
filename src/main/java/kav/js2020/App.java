@@ -9,22 +9,8 @@ public class App
 {
     public static void main( String[] args ) {
 
-        Figura figura = new Figura() {
-            @Override
-            public String Name() {
-                return null;
-            }
+        Figura figura = null;
 
-            @Override
-            public Integer Perim() {
-                return null;
-            }
-
-            @Override
-            public Double Plosh() {
-                return null;
-            }
-        };
         Scanner in = new Scanner(System.in);
         System.out.print("Выберите фигуру: \n 1 - треугольник \n 2 - квадрат \n 3 - прямоугольник \n");
         int fig = in.nextInt();

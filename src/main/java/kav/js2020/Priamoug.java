@@ -3,7 +3,6 @@ package kav.js2020;
 public class Priamoug extends Kvadrat{
 
     private Integer b;
-    Kvadrat kv = new Kvadrat();
 
     public Integer getB() {
         return b;
@@ -20,11 +19,11 @@ public class Priamoug extends Kvadrat{
 
     @Override
     public Integer Perim() {
-        return (kv.getA()*2 + b*2);
+        return (getA()*2 + b*2);
     }
 
     @Override
     public Double Plosh() {
-        return (kv.getA()*b+0.0);
+        return (getA()*b+0.0);
     }
 }
